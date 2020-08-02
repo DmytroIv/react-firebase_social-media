@@ -45,7 +45,7 @@ exports.postOneScream = (req, res) => {
 		.then((doc) => {
 			const resScream = newScream;
 			resScream.screamId = doc.id;
-			return res.json({ message: `document ${doc.id} created successfully` });
+			return res.json(resScream);
 		})
 		.catch((err) => {
 			res.status(500).json({ error: 'something went wrong' });
